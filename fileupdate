@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Use case:
+#  fileupdate myfile [backupnamesuffix] < myalternative
+#  fileupdate myfile none < myalternative
+
+myfile=$1
+
+TMP="/tmp/FC.tmp"
+
+cat > $TMP
+
+DIFF=`diff -q $TMP $myfile`
+
+if [ ! "$DIFF" = "" ]; then
+	if [ "$2" = "" ]; then
+		mv $myfile  $myfile~
+	elif [ ! "$2" = "none" ]; then
+		mv $myfile  $myfile$2
+	fi
+	mv $TMP $myfile
+	echo "Changed";
+fi
