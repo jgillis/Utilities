@@ -1,0 +1,9 @@
+#!/bin/sh
+
+# startswith foo foobar   -> 0
+# startswith foobar foo   -> 1
+
+python -c "import sys;print int(sys.argv[1].startswith(sys.argv[2]))" $1 $2
+
+# startswith foo foobar
+# 
