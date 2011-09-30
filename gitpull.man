@@ -1,0 +1,6 @@
+NAME
+  gitpull - pull a subdirectory out of a git repository
+SYNOPSIS
+  gitpull repository relative_subdir resultlocation
+EXAMPLE
+  gitpull ~/phd tools/yap yap
