@@ -1,0 +1,4 @@
+#!/bin/bash
+
+xclip -o -selection clipboard | perl -p -n -e $1 | xclip -selection clipboard
+echo "Done"
