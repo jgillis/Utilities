@@ -1,1 +1,11 @@
 A collection of bash (linux) and bat (windows) scripts for everyday tasks.
+
+= Generate documentation =
+The goal is to be able to do 'man some_utility'. Here is how:
+
+
+Each utility comes with a .man file that can be converted to manpage documentation.
+
+Issue a make command to generate a man/man3/ directory populated with man pages.
+
+Add that man/man3/ path to your MANPAGE environmental variable
