@@ -1,0 +1,5 @@
+NAME
+  fileupdate - safely updates a file only if contents have changed
+SYNOPSIS
+  fileupdate myfile [backupnamesuffix] < myalternative
+  fileupdate myfile none < myalternative

@@ -1,0 +1,6 @@
+NAME
+  clipre - modifies the clipboard content with a perl regex
+SYNOPSIS
+  clipre regex
+EXAMPLE
+  clipre "s/a/b/"

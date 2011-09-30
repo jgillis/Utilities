@@ -1,0 +1,4 @@
+NAME
+  utilities - lists all available utilities
+SYNOPSIS
+  utilities

@@ -1,0 +1,9 @@
+NAME
+  startswith - checks if a string starts with another string
+DECSRIPTION
+  Returns 0 or 1.
+SYNOPSIS
+  startswith lookfor_string lookto_string
+EXAMPLE
+  startswith foo foobar   -> 0
+  startswith foobar foo   -> 1

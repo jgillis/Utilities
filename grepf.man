@@ -1,0 +1,6 @@
+NAME
+  grepf - combines find with grep
+SYNOPSIS
+  grepf filepattern [grepoptions] matchstrings
+EXAMPLE
+  grepf "*.html" -i canvas
