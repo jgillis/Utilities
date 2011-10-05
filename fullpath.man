@@ -1,0 +1,10 @@
+NAME
+  fullpath - return the full path of a file
+DESCRIPTION
+  (to be filled in)
+SYNOPSIS
+  (here is the command line options)
+OPTION
+EXAMPLE
+  (here comes an example)
+
