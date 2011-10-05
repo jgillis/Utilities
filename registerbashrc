@@ -1,0 +1,8 @@
+#!/bin/bash
+
+grep=`grep "$1" ~/.bashrc`
+echo "$grep"
+if [ "$grep" = "" ]; then
+  echo "source $1 # from registerbashrc" >> ~/.bashrc
+  source ~/.bashrc
+fi

@@ -1,0 +1,6 @@
+NAME
+  registerbashrc - registers a script file to be put in .bashrc
+DESCRIPTION
+  Appends to .bashrc if it doesn't exist already
+  Does not include contents of file in .bashrc, just a link
+

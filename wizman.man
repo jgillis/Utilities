@@ -1,0 +1,6 @@
+NAME
+  wizman - a wizard that creates .man files
+DECSRIPTION
+  Generates a template .man files and opens up a text editor for it
+SYNOPSIS
+  wizman projectname

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+echo "This is wizman - a wizard to create .man files"
+
+safewrite "NAME
+  $1 - (here is a one-line description)
+DESCRIPTION
+  (to be filled in)
+SYNOPSIS
+  (here is the command line options)
+OPTION
+EXAMPLE
+  (here comes an example)
+" $1.man
+nano $1.man
+

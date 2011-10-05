@@ -1,0 +1,4 @@
+NAME
+  safewrite - writes a string to file, and query use if it exists already
+SYNOPSIS
+  safewrite "you string" filename

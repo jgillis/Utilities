@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+if [ -f $2 ]; then
+  echo "$1" > $2.tentative
+  DIFF=`diff -q $2 $2.tentative`
+  if [ ! "$DIFF" = "" ]; then
+    echo "File $2 exists already."
+    echo "Here is a diff: "
+    diff $2 $2.tentative
+    rm $2.tentative
+    echo -n "Overwrite? (Y/N)"
+    read answer
+    if [ "$answer" == "Y" ]; then
+      echo "$1" > $2
+    fi
+  fi
+else
+  echo "$1" > $2
+fi
