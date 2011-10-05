@@ -1,0 +1,1 @@
+registerbashrc bashrc

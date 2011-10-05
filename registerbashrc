@@ -1,8 +1,10 @@
 #!/bin/bash
 
-grep=`grep "$1" ~/.bashrc`
+NAME=`fullpath $1`
+
+grep=`grep "$NAME" ~/.bashrc`
 echo "$grep"
 if [ "$grep" = "" ]; then
-  echo "source $1 # from registerbashrc" >> ~/.bashrc
+  echo "source $NAME # from registerbashrc" >> ~/.bashrc
   source ~/.bashrc
 fi
