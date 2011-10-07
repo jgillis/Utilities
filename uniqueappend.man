@@ -1,0 +1,8 @@
+NAME
+  uniqueappend - Append a line to a file, if the line does not already exist
+DESCRIPTION
+  
+SYNOPSIS
+  uniqueappend "line" file
+
+

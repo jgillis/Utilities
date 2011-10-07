@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ ! -f "$2" ]; then
+  echo "$1" >> "$2"
+  exit 0
+fi
+grep=`grep "$1" "$2"`
+if [ "$grep" = "" ]; then
+  echo "$1" >> "$2"
+fi
