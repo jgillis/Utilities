@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [ "$1" == "-n" ]; then
+  for file in `find -name "$2" -type f | grep -v .svn | grep -v .git | grep -v .findrep~`;
+    do perl -p -e "chomp;my \$in = \$_;my \$out=\$_; if (\$out=~$3) {\$_ = qq<\033[95m$file\033[36m:\033[32m\$.\033[36m:\033[37m\$in\033[36m:\033[31m\$out\033[37m\n> } else {\$_=''}" $file
+  done;
+else
+  for file in `find -name "$1" -type f | grep -v .svn | grep -v .git | grep -v .findrep~`;
+    do perl -p -e "chomp;my \$in = \$_;my \$out=\$_; if (\$out=~$2) {\$_ = qq<\033[95m$file\033[36m:\033[32m\$.\033[36m:\033[37m\$in\033[36m:\033[31m\$out\033[37m\n> } else {\$_=''}" $file;
+    perl -p -w -e $2 $file | fileupdate $file .findrep~ ;
+  done;
+fi
+

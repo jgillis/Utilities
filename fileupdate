@@ -19,5 +19,5 @@ if [ ! "$DIFF" = "" ]; then
 		mv $myfile  $myfile$2
 	fi
 	mv $TMP $myfile
-	echo "Changed";
+	echo "Changed $1";
 fi
