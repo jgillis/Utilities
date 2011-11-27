@@ -1,12 +1,18 @@
 #!/bin/bash
 
 if [ "$1" == "-n" ]; then
+  echo "This is findrep"
+  echo "perl regex: ${FGRED}$3${NORMAL}"
+  echo "(like it would appear in perl file)"
   for file in `find -name "$2" -type f | grep -v .svn | grep -v .git | grep -v .findrep~`;
     do perl -p -e "chomp;my \$in = \$_;my \$out=\$_; if (\$out=~$3) {\$_ = qq<${FGMAGENTA}$file${FGCYAN}:${FGGREEN}\$.${FGCYAN}:\n${NORMAL}\$in\n${FGRED}\$out${NORMAL}\n> } else {\$_=''}" $file
   done;
 else
+  echo "This is findrep"
+  echo "perl regex: ${FGRED}$3${NORMAL}"
+  echo "(like it would appear in perl file)"
   for file in `find -name "$1" -type f | grep -v .svn | grep -v .git | grep -v .findrep~`;
-    do perl -p -e "chomp;my \$in = \$_;my \$out=\$_; if (\$out=~$2) {\$_ = qq<${FGMAGENTA}$file${FGCYAN}:${FGGREEN}\$.${FGCYAN}:\n${NORMAL}\$in\n${FGRED}\$out${NORMAL}\n> } else {\$_=''}" $file;
+    do perl -p -e "chomp;my \$in = \$_;my \$out=\$_; if (\$out=~$2) {\$_ = qq<${FGMAGENTA}$file${NORMAL}:${FGGREEN}\$.${FGCYAN}:\n${NORMAL}\$in\n${FGRED}\$out${NORMAL}\n> } else {\$_=''}" $file;
     perl -p -w -e $2 $file | fileupdate $file .findrep~ ;
   done;
 fi
