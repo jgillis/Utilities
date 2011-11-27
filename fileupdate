@@ -13,11 +13,13 @@ cat > $TMP
 DIFF=`diff -q $TMP $myfile`
 
 if [ ! "$DIFF" = "" ]; then
-	if [ "$2" = "" ]; then
-		mv $myfile  $myfile~
-	elif [ ! "$2" = "none" ]; then
-		mv $myfile  $myfile$2
+  if [ -s $TMP ]; then
+	  if [ "$2" = "" ]; then
+		  mv $myfile  $myfile~
+	  elif [ ! "$2" = "none" ]; then
+		  mv $myfile  $myfile$2
+	  fi
+	  mv $TMP $myfile
+	  echo "Changed $1";
 	fi
-	mv $TMP $myfile
-	echo "Changed $1";
 fi
