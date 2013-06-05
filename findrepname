@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#  apt-get install libregexp-common-perl
+perlarg="-MRegexp::Common"
+
+if [ "$1" == "-n" ]; then
+  echo "This is findrepname"
+  echo "perl regex: ${FGRED}$3${NORMAL}"
+  echo "(like it would appear in perl file)"
+  for file in `find -name "$2" -type f | grep -v .svn | grep -v .git | grep -v .findrepname~`;
+    do perl $perlarg -e "my \$in = shift;my \$out=\$in; if (\$out=~$3) {print qq[${FGMAGENTA}$file${FGCYAN}${NORMAL} -> ${FGRED}\$out${NORMAL}\n] }" $file
+  done;
+else
+  echo "This is findrepname"
+  echo "perl regex: ${FGRED}$3${NORMAL}"
+  echo "(like it would appear in perl file)"
+  for file in `find -name "$1" -type f | grep -v .svn | grep -v .git | grep -v .findrepname~`;
+    do perl $perlarg -e "my \$in = shift;my \$out=\$in; if (\$out=~$2) {print \$out} else { print \$in }" $file | xargs -I {} filerename $file {} "findrepname~"
+  done;
+fi
+

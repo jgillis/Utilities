@@ -1,0 +1,4 @@
+NAME
+  fileupdate - safely renames a file
+SYNOPSIS
+  filerename oldname newname [backupnamesuffix]

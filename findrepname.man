@@ -1,0 +1,11 @@
+NAME
+  findrep - Find and replace filenames
+DESCRIPTION
+  This method is safe wrt to corrupting .svn or .git
+SYNOPSIS
+  findrep [-n] filematch perlregex
+OPTION
+  -n:  Do not replace/dry run, just see what changes would be made
+EXAMPLE
+  findrep "*.py" "s/foo/bar/g"
+

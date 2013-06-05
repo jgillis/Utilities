@@ -1,0 +1,15 @@
+#!/bin/sh
+
+# Use case:
+#  filerename oldname newname [backupnamesuffix]
+
+echo "$1->$2"
+
+if [ ! "$1" = "$2" ]; then
+  if [ "$3" = "" ]; then
+	  mv "$1" "$2"
+  else
+    cp "$1" "$1.$3"
+	  mv "$1" "$2"
+  fi
+fi
